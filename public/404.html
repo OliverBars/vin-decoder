@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      var redirect = '?p=' + path.slice(1).split('/').join('~') + (search ? '~' + search.slice(1) : '') + hash;
+      window.location.replace('/vin-decoder/' + redirect);
+    </script>
+  </head>
+</html>
