@@ -1,0 +1,71 @@
+.vin-results__state {
+  padding: 2rem;
+  text-align: center;
+}
+
+.vin-results__loading {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+.vin-results__error {
+  color: var(--color-accent);
+  font-size: 0.95rem;
+}
+
+.vin-results__warning {
+  background: #fff8e1;
+  border: 1px solid #f59e0b;
+  color: #92400e;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.vin-results {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.vin-results__title {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.vin-results__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.vin-results__table th {
+  text-align: left;
+  padding: 0.6rem 1.5rem;
+  background: var(--color-bg);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+}
+
+.vin-results__table td {
+  padding: 0.65rem 1.5rem;
+  border-top: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.vin-results__table tbody tr:hover {
+  background: var(--color-bg);
+}
+
+@media (max-width: 480px) {
+  .vin-results__table th,
+  .vin-results__table td {
+    padding: 0.6rem 1rem;
+  }
+}

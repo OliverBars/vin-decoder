@@ -1,0 +1,80 @@
+.vin-form {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.vin-form__label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.vin-form__row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.vin-form__input {
+  flex: 1;
+  padding: 0.6rem 0.9rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: monospace;
+  letter-spacing: 1px;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+.vin-form__input:focus {
+  border-color: var(--color-primary);
+}
+
+.vin-form__input--error {
+  border-color: var(--color-accent);
+}
+
+.vin-form__btn {
+  padding: 0.6rem 1.5rem;
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.vin-form__btn:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.vin-form__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.vin-form__counter {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 0.35rem;
+  text-align: right;
+}
+
+.vin-form__error {
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 480px) {
+  .vin-form__row {
+    flex-direction: column;
+  }
+}
