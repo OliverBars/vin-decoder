@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+import { HashRouter, Routes, Route, NavLink } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Variables from './pages/Variables/Variables'
 import VariableDetail from './pages/VariableDetail/VariableDetail'
@@ -6,7 +6,7 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <header className="header">
         <div className="header__inner">
           <NavLink to="/" className="header__logo">
@@ -41,7 +41,7 @@ function App() {
       <footer className="footer">
         <p>Data provided by <a href="https://vpic.nhtsa.dot.gov/api/" target="_blank" rel="noreferrer">NHTSA vPIC API</a></p>
       </footer>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
