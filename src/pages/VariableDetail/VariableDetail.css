@@ -1,0 +1,126 @@
+.var-detail__state {
+  padding: 2rem;
+  text-align: center;
+}
+
+.var-detail__loading {
+  color: var(--color-text-muted);
+}
+
+.var-detail__error {
+  color: var(--color-accent);
+}
+
+.var-detail {
+  max-width: 800px;
+}
+
+.var-detail__back {
+  display: inline-block;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  transition: color 0.2s;
+}
+
+.var-detail__back:hover {
+  color: var(--color-text);
+}
+
+.var-detail__card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  margin-bottom: 1.5rem;
+}
+
+.var-detail__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.var-detail__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.var-detail__type {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  background: var(--color-bg);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.var-detail__desc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.var-detail__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+
+.var-detail__meta-row {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.var-detail__meta-row dt {
+  font-weight: 600;
+  min-width: 80px;
+  color: var(--color-text-muted);
+}
+
+.var-detail__values-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.var-detail__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.var-detail__table th {
+  text-align: left;
+  padding: 0.6rem 1.25rem;
+  background: var(--color-bg);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text-muted);
+}
+
+.var-detail__table td {
+  padding: 0.6rem 1.25rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.var-detail__table tbody tr:hover {
+  background: var(--color-bg);
+}
+
+.var-detail__no-values {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
