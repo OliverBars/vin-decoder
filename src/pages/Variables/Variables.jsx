@@ -1,34 +1,34 @@
-import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { getVariableList } from '../../api/nhtsa'
-import './Variables.css'
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { getVariableList } from "../../api/nhtsa";
+import "./Variables.css";
 
 export default function Variables() {
-  const [variables, setVariables] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState('')
+  const [variables, setVariables] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     async function fetchVariables() {
       try {
-        const data = await getVariableList()
-        setVariables(data)
+        const data = await getVariableList();
+        setVariables(data);
       } catch (err) {
-        setError(err.message || 'Failed to load variables')
+        setError(err.message || "Failed to load variables");
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
     }
 
-    fetchVariables()
-  }, [])
+    fetchVariables();
+  }, []);
 
   if (isLoading) {
     return (
       <div className="variables__state">
         <p className="variables__loading">Loading variables...</p>
       </div>
-    )
+    );
   }
 
   if (error) {
@@ -36,7 +36,7 @@ export default function Variables() {
       <div className="variables__state">
         <p className="variables__error">⚠ {error}</p>
       </div>
-    )
+    );
   }
 
   return (
@@ -54,11 +54,14 @@ export default function Variables() {
               <span className="variables__type">{variable.DataType}</span>
             </Link>
             {variable.Description && (
-              <p className="variables__desc">{variable.Description}</p>
+              <p
+                className="variables__desc"
+                dangerouslySetInnerHTML={{ __html: variable.Description }}
+              />
             )}
           </li>
         ))}
       </ul>
     </div>
-  )
+  );
 }
