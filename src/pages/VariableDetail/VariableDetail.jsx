@@ -1,42 +1,39 @@
-import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import { getVariableList, getVariableById } from '../../api/nhtsa'
-import './VariableDetail.css'
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
+import { getVariableList, getVariableById } from "../../api/nhtsa";
+import "./VariableDetail.css";
 
 export default function VariableDetail() {
-  const { variableId } = useParams()
-  const [variable, setVariable] = useState(null)
-  const [values, setValues] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState('')
+  const { variableId } = useParams();
+  const [variable, setVariable] = useState(null);
+  const [values, setValues] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     async function fetchData() {
       try {
-        // Отримуємо інфо про змінну зі списку
-        const list = await getVariableList()
-        const found = list.find((v) => String(v.ID) === String(variableId))
-        setVariable(found || null)
+        const list = await getVariableList();
+        const found = list.find((v) => String(v.ID) === String(variableId));
+        setVariable(found || null);
 
-        // Отримуємо можливі значення
-        const vals = await getVariableById(variableId)
-        setValues(vals)
+        const vals = await getVariableById(variableId);
+        setValues(vals);
       } catch (err) {
-        setError(err.message || 'Failed to load variable')
+        setError(err.message || "Failed to load variable");
       } finally {
-        setIsLoading(false)
+        setIsLoading(false);
       }
     }
-
-    fetchData()
-  }, [variableId])
+    fetchData();
+  }, [variableId]);
 
   if (isLoading) {
     return (
       <div className="var-detail__state">
         <p className="var-detail__loading">Loading...</p>
       </div>
-    )
+    );
   }
 
   if (error) {
@@ -44,7 +41,7 @@ export default function VariableDetail() {
       <div className="var-detail__state">
         <p className="var-detail__error">⚠ {error}</p>
       </div>
-    )
+    );
   }
 
   return (
@@ -54,15 +51,15 @@ export default function VariableDetail() {
       </Link>
 
       <div className="var-detail__card">
-        <div className="var-detail__header">
-          <h1 className="var-detail__title">{variable?.Name || `Variable #${variableId}`}</h1>
-          {variable?.DataType && (
-            <span className="var-detail__type">{variable.DataType}</span>
-          )}
-        </div>
+        <h1 className="var-detail__title">
+          {variable?.Name || `Variable #${variableId}`}
+        </h1>
 
         {variable?.Description && (
-          <p className="var-detail__desc">{variable.Description}</p>
+          <p
+            className="var-detail__desc"
+            dangerouslySetInnerHTML={{ __html: variable.Description }}
+          />
         )}
 
         <dl className="var-detail__meta">
@@ -107,5 +104,5 @@ export default function VariableDetail() {
         </p>
       )}
     </div>
-  )
+  );
 }

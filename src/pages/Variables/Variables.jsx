@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { getVariableList } from "../../api/nhtsa";
 import "./Variables.css";
 
+
 export default function Variables() {
   const [variables, setVariables] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -51,7 +52,6 @@ export default function Variables() {
           <li key={variable.ID} className="variables__item">
             <Link to={`/variables/${variable.ID}`} className="variables__link">
               <span className="variables__name">{variable.Name}</span>
-              <span className="variables__type">{variable.DataType}</span>
             </Link>
             {variable.Description && (
               <p

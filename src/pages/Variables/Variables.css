@@ -1,3 +1,7 @@
+.variables{
+  margin: 0 auto;
+}
+
 .variables__state {
   padding: 2rem;
   text-align: center;
